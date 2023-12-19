@@ -1,11 +1,3 @@
-{{-- <x-admin-layout>
-    <x-slot name="header">
-        {{ __('New Admin Section')}}
-    </x-slot>
-
-    This is the content of my admin home
-</x-admin-layout> --}}
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -52,24 +44,29 @@
             <ul class="mt-8">
                 <li>
                     <a
-                        href="#"
+                        href="{{ route('admin') }}"
                         class="block px-4 py-2 hover:bg-indigo-800 rounded-md"
                         >Home</a
                     >
                     <a
-                        href="#"
+                        href="{{ route('admin-users') }}"
                         class="block px-4 py-2 hover:bg-indigo-800 rounded-md"
-                        >About</a
+                        >All Users</a
                     >
                     <a
                         href="#"
                         class="block px-4 py-2 hover:bg-indigo-800 rounded-md"
-                        >Products</a
+                        >Create User</a
                     >
                     <a
                         href="#"
                         class="block px-4 py-2 hover:bg-indigo-800 rounded-md"
-                        >Pricing</a
+                        >All Posts</a
+                    >
+                    <a
+                        href="#"
+                        class="block px-4 py-2 hover:bg-indigo-800 rounded-md"
+                        >Create Post</a
                     >
                 </li>
             </ul>
@@ -96,9 +93,12 @@
                     </svg>
                 </button>
                 <span class="block text-2xl sm:text-3xl font-bold p-4"
-                    >Admin Area</span
+                    >{{ $header }}</span
                 >
             </header>
+            <main>
+                {{ $slot }}
+            </main>
         </div>
     </body>
 </html>
