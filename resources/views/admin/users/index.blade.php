@@ -5,7 +5,7 @@
     <div class="flex flex-col">
 
         @if(Session::has('admin_flash'))
-            <x-alert type="success" position="top-right">{{ Session('admin_flash') }}</x-alert>
+            <x-alert type="error" position="top-right">{{ Session('admin_flash') }}</x-alert>
         @endif
         <div class="inline-block min-w-full py-2 sm:px-6 lg:px-8">
             <div class="overflow-hidden">
@@ -26,7 +26,8 @@
                         @foreach ($users as $user)
                         <tr class="border-b dark:border-neutral-500">
                             <td class="whitespace-nowrap px-6 py-4 font-medium">{{ $user->id }}</td>
-                            <td class="whitespace-nowrap px-6 py-4">{{ $user->name }}</td>
+                            <td class="whitespace-nowrap px-6 py-4">
+                                <a href="{{ route('admin-users-edit', $user->id)}}">{{ $user->name }}</a></td>
                             <td class="whitespace-nowrap px-6 py-4">{{ $user->email }}</td>
                             <td class="whitespace-nowrap px-6 py-4">{{ $user->role->name }}</td>
                             <td class="whitespace-nowrap px-6 py-4">{{ $user->active == 1 ? 'Yes' : 'No'}}</td>
