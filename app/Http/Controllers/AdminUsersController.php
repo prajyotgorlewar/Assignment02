@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Role;
 use App\Models\User;
-
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class AdminUsersController extends Controller
 {
@@ -23,7 +24,8 @@ class AdminUsersController extends Controller
      */
     public function create()
     {
-        return view('admin.users.create');
+        $roles = Role::all();
+        return view('admin.users.create', compact('roles'));
     }
 
     /**
@@ -31,7 +33,15 @@ class AdminUsersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'role_id' => $request->role_id,
+            'active' => $request->active,
+            'password' => Hash::make('Admin123'),
+        ]);
+
+        return redirect()->route('admin-users');
     }
 
     /**
@@ -39,24 +49,30 @@ class AdminUsersController extends Controller
      */
     public function show(string $id)
     {
-
+        //
     }
 
-
+    /**
+     * Show the form for editing the specified resource.
+     */
     public function edit(string $id)
     {
-
+        //
     }
 
-
+    /**
+     * Update the specified resource in storage.
+     */
     public function update(Request $request, string $id)
     {
-
+        //
     }
 
-
+    /**
+     * Remove the specified resource from storage.
+     */
     public function destroy(string $id)
     {
-
+        //
     }
 }

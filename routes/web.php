@@ -43,3 +43,7 @@ Route::get('/admin/users', [
 Route::get('/admin/users/create', [
     AdminUsersController::class, 'create'
 ])->middleware('auth')->name('admin-users-create');
+
+Route::post('/admin/users/create', [
+    AdminUsersController::class, 'store'
+])->middleware('auth')->name('admin-users-create');
