@@ -26,6 +26,8 @@
             </select>
         </div>
 
+        <br>
+
         <!-- Role -->
         <div>
             <label for="role_id">{{ __('Role') }}</label>
@@ -37,6 +39,7 @@
         </div>
 
         <div class="block">
+            <br>
             <x-primary-button type="submit">Create</x-primary-button>
         </div>
 
