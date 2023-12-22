@@ -6,6 +6,7 @@ use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 
 class AdminUsersController extends Controller
 {
@@ -41,7 +42,9 @@ class AdminUsersController extends Controller
             'password' => Hash::make('Admin123'),
         ]);
 
-        return redirect()->route('admin-users');
+
+        Session::flash('admin_flash', 'User created successfully.');
+        return redirect(route('admin-users'));
     }
 
     /**
