@@ -54,7 +54,7 @@
                         >All Users</a
                     >
                     <a
-                        href="#"
+                        href="{{ route('admin-users-create') }}"
                         class="block px-4 py-2 hover:bg-indigo-800 rounded-md"
                         >Create User</a
                     >
