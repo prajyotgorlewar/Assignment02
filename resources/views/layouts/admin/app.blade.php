@@ -71,12 +71,12 @@
                         >Create Category</a
                     >
                     <a
-                        href="#"
+                        href="{{ route('admin-posts') }}"
                         class="block px-4 py-2 hover:bg-indigo-800 rounded-md"
                         >All Posts</a
                     >
                     <a
-                        href="#"
+                        href="{{ route('admin-posts-create') }}"
                         class="block px-4 py-2 hover:bg-indigo-800 rounded-md"
                         >Create Post</a
                     >

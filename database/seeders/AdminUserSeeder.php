@@ -22,7 +22,7 @@ class AdminUserSeeder extends Seeder
         User::create([
             'name' => 'Tushar Joshi',
             'email' => 'tushar@gmail.com',
-            'role_id' => 2,
+            'role_id' => 1,
             'password' => Hash::make('Nagpur2023!'),
         ]);
     }
