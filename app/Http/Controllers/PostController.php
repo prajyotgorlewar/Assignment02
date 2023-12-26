@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 
 class PostController extends Controller
@@ -34,6 +35,8 @@ class PostController extends Controller
     public function store(Request $request)
     {
         $post = $request->all();
+        $post['user_id'] = Auth::user()->id;
+        $post['image_id'] = 0;
         Post::create($post);
         Session::flash('admin_flash', 'Post created successfully.');
         return redirect(route('admin-posts'));

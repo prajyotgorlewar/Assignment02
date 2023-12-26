@@ -2,13 +2,13 @@
     <x-slot name="header">
         {{ __('Admin > Create Post')}}
     </x-slot>
-    <form method="POST" action="{{ route('admin-posts-create') }}" enctype="multipart/form-data" class="p-3">
+    <form method="POST" action="{{ route('admin-posts-create') }}" class="p-3">
         @csrf
 
         <!-- Title -->
         <div class="p-2">
             <label for="name">{{ __('Title') }}</label>
-            <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('title')" required autofocus autocomplete="title" />
+            <x-text-input id="title" class="block mt-1 w-full" type="text" name="title" required autofocus autocomplete="title" />
         </div>
 
         <!-- Category -->
@@ -43,14 +43,14 @@
         <script src="https://cdn.ckeditor.com/ckeditor5/40.1.0/classic/ckeditor.js"></script>
     </x-slot>
     <script>
-        ClassicEditor
-            .create( document.querySelector( '#content1' ) )
-            .then( editor => {
-                    console.log( editor );
-            } )
-            .catch( error => {
-                    console.error( error );
-            } );
+        // ClassicEditor
+        //     .create( document.querySelector( '#content1' ) )
+        //     .then( editor => {
+        //             console.log( editor );
+        //     } )
+        //     .catch( error => {
+        //             console.error( error );
+        //     } );
     </script>
 </x-admin-layout>
 
