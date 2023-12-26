@@ -61,7 +61,7 @@ class PostController extends Controller
             return redirect(route('admin-posts'));
         }
         $categories = Category::all();
-        return view('admin.posts.edit', compact('categories'));
+        return view('admin.posts.edit', compact('categories', 'post'));
     }
 
     /**
