@@ -13,6 +13,9 @@
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+        @if(isset($scripts))
+        {{ $scripts }}
+        @endif
     </head>
     <body class="antialiased min-h-screen lg:flex" x-data="{open: false}">
         <nav

@@ -24,10 +24,10 @@
 
         <!-- Content -->
         <div class="p-2">
-            <label for="content">{{ __('Content') }}</label>
-            <textarea id="content"
+            <label for="content1">{{ __('Content') }}</label>
+            <textarea id="content1"
                 class="block mt-1 w-full rounded"
-                name="content" :value="old('title')"
+                name="content"
                 rows="6"
                 required autofocus></textarea>
         </div>
@@ -39,4 +39,19 @@
         </div>
 
     </form>
+    <x-slot name="scripts">
+        <script src="https://cdn.ckeditor.com/ckeditor5/40.1.0/classic/ckeditor.js"></script>
+    </x-slot>
+    <script>
+        ClassicEditor
+            .create( document.querySelector( '#content1' ) )
+            .then( editor => {
+                    console.log( editor );
+            } )
+            .catch( error => {
+                    console.error( error );
+            } );
+    </script>
 </x-admin-layout>
+
+
