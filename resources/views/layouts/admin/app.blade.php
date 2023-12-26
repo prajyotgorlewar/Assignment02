@@ -47,7 +47,7 @@
             <ul class="mt-8">
                 <li>
                     <a
-                        href="{{ route('admin') }}"
+                    href="{{ url('') }}"
                         class="block px-4 py-2 hover:bg-indigo-800 rounded-md"
                         >Home</a
                     >
@@ -74,15 +74,16 @@
                         >Create Category</a
                     >
                     <a
-                        href="{{ route('admin-posts') }}"
-                        class="block px-4 py-2 hover:bg-indigo-800 rounded-md"
-                        >All Posts</a
-                    >
-                    <a
                         href="{{ route('admin-posts-create') }}"
                         class="block px-4 py-2 hover:bg-indigo-800 rounded-md"
                         >Create Post</a
                     >
+                    <a
+                        href="{{ route('admin-posts') }}"
+                        class="block px-4 py-2 hover:bg-indigo-800 rounded-md"
+                        >All Posts</a
+                    >
+
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
                         <a :href="route('logout')"

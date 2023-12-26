@@ -12,12 +12,7 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $html = Str::markdown('
-
- ![eagle](/images/eagle.png)
-
-
-        ');
+        $html = Str::markdown('');
         return view('admin.index', ['html' => $html]);
     }
 
