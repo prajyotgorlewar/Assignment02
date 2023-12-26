@@ -65,6 +65,8 @@ Route::patch('/admin/users/{id}/edit', [
     AdminUsersController::class, 'update'
 ])->middleware('admin')->name('admin-users-edit');
 
+Route::delete('/admin/users/{user}', [AdminUsersController::class, 'destroy'])->name('admin-users-destroy');
+
 // Categories
 
 Route::get('/admin/categories', [
@@ -86,6 +88,8 @@ Route::get('/admin/categories/{id}/edit', [
 Route::patch('/admin/categories/{id}/edit', [
     CategoryController::class, 'update'
 ])->middleware('auth')->name('admin-categories-edit');
+
+Route::delete('/admin/categories/{category}', [CategoryController::class, 'destroy'])->name('admin-categories-destroy');
 
 // posts
 
@@ -109,3 +113,6 @@ Route::get('/admin/posts/{id}/edit', [
 Route::patch('/admin/posts/{id}/edit', [
     PostController::class, 'update'
 ])->middleware('auth')->name('admin-posts-edit');
+
+Route::delete('/admin/posts/{post}', [PostController::class, 'destroy'])->name('admin-posts-destroy');
+

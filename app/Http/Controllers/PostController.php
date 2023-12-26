@@ -79,8 +79,17 @@ class PostController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
-    {
-        //
-    }
+    public function destroy(Request $request, string $id)
+{
+    // Find the post by ID
+    $post = Post::findOrFail($id);
+
+    // Perform any additional checks, such as user authentication or authorization
+
+    // Delete the post
+    $post->delete();
+
+    // Redirect to the index page or any other appropriate page
+    return redirect()->route('admin-posts')->with('success', 'Post deleted successfully');
+}
 }

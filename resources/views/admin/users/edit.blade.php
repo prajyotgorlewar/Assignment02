@@ -2,6 +2,7 @@
     <x-slot name="header">
         {{ __('Admin > Edit User')}}
     </x-slot>
+
     <form method="POST" action="{{ route('admin-users-edit', $user->id) }}" class="p-3">
         @csrf
         @method('PATCH')
@@ -29,7 +30,7 @@
         </div>
 
         <!-- Role -->
-        <div>
+        <div class="p-2">
             <label for="role_id">{{ __('Role') }}</label>
             <select name="role_id" id="role_id">
                 <option disabled>Select a role</option>
@@ -44,6 +45,14 @@
         <div class="block">
             <x-primary-button type="submit">Update User</x-primary-button>
         </div>
+    </form>
 
+    <!-- Delete Form -->
+    <form method="POST" action="{{ route('admin-users-destroy', $user->id) }}" onsubmit="return confirm('Are you sure you want to delete this user?')">
+        @csrf
+        @method('DELETE')
+        <div class="block p-2">
+            <button type="submit" class="text-red-500">Delete User</button>
+        </div>
     </form>
 </x-admin-layout>
