@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -11,7 +12,13 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('admin.index');
+        $html = Str::markdown('
+
+ ![eagle](/images/eagle.png)
+
+
+        ');
+        return view('admin.index', ['html' => $html]);
     }
 
     /**
@@ -62,4 +69,3 @@ class AdminController extends Controller
         //
     }
 }
-
