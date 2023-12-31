@@ -20,10 +20,11 @@ class AdminUserSeeder extends Seeder
         //     'password' => Hash::make('Nagpur2023!'),
         // ]);
         User::create([
-            'name' => 'Tushar Joshi',
-            'email' => 'tushar@gmail.com',
+            'name' => 'Prajyot Gorlewar',
+            'email' => 'prajyot@gmail.com',
             'role_id' => 1,
-            'password' => Hash::make('Nagpur2023!'),
+            'password' => Hash::make('12345678'),
         ]);
+
     }
 }
